@@ -1,6 +1,4 @@
-" Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
-
+"NeoBundle Scripts-----------------------------
 if has('vim_starting')
   if &compatible
     set nocompatible               " Be iMproved
@@ -22,6 +20,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Note: You don't set neobundle setting in .gvimrc!
 
 NeoBundle 'bling/vim-airline'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'vim-scripts/pep8'
 NeoBundle 'saltstack/salt-vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
@@ -29,6 +29,11 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'fatih/vim-go'
 " Autocomplete
 NeoBundle 'Shougo/neocomplete'
+NeoBundle 'elzr/vim-json'
+" Colors
+NeoBundle 'morhetz/gruvbox'
+NeoBundle 'geetarista/ego.vim'
+NeoBundle 'wellsjo/wellsokai.vim'
 
 call neobundle#end()
 
@@ -93,3 +98,8 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+" Set colorscheme
+"colorscheme gruvbox
+"colorscheme ego
+colorscheme wellsokai
+"let g:gruvbox_contrast_dark = 'hard'
