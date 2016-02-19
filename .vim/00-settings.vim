@@ -2,6 +2,8 @@ set list
 set listchars=tab:»\ ,trail:·,nbsp:⎵,precedes:←,extends:→,conceal:·,eol:¶
 set showbreak=↪
 
+set relativenumber
+set number
 set cursorline
 set incsearch
 set ignorecase
@@ -16,7 +18,7 @@ endif
 exe 'set undodir='.expand('$HOME').'/.backup/vim/undo'
 
 set hidden
-set textwidth=79
+set textwidth=74
 
 set grepprg=grep\ -n\ $@
 
@@ -33,6 +35,13 @@ set nocompatible
 set backspace=indent,eol,start
 set autoindent
 
+set lazyredraw
+set ttyfast
+
+" FileType {{{
+au FileType json set foldmethod=syntax
+au FileType text set foldmethod=marker
+" }}}
 """"""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""
