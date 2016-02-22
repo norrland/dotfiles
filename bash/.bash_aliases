@@ -16,3 +16,4 @@ alias vssh="vagrant ssh"
 # }}}
 
 # vim:foldmethod=marker:ft=sh
+alias tmux="tmux -2" # Set tmux to use 256 colour
