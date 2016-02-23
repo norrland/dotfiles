@@ -1,52 +1,30 @@
-"NeoBundle Scripts-----------------------------
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
+" Plug
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#begin(expand('~/.vim/plug/'))
 
 " My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
 
-NeoBundle 'bling/vim-airline'
-NeoBundle 'chriskempson/vim-tomorrow-theme'
-NeoBundle 'vim-scripts/pep8'
-NeoBundle 'saltstack/salt-vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'airblade/vim-gitgutter'
+Plug 'bling/vim-airline'
+Plug 'vim-scripts/pep8'
+Plug 'saltstack/salt-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 " Go
-NeoBundle 'fatih/vim-go'
+Plug 'fatih/vim-go'
 " Autocomplete
-"NeoBundle 'Shougo/neocomplete'
-"NeoBundle 'Shugo/deoplete'
-NeoBundle 'elzr/vim-json'
+Plug 'Shugo/deoplete'
+Plug 'elzr/vim-json'
 " Colors
-NeoBundle 'morhetz/gruvbox'
-NeoBundle 'geetarista/ego.vim'
-NeoBundle 'wellsjo/wellsokai.vim'
+Plug 'morhetz/gruvbox'
+Plug 'geetarista/ego.vim'
+Plug 'wellsjo/wellsokai.vim'
 " Ranger
-NeoBundle 'airodactyl/neovim-ranger'
+Plug 'airodactyl/neovim-ranger'
 
-call neobundle#end()
+call plug#end()
 
 " Required:
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-" END NeoBundle
 
 for f in split(globpath(split(&runtimepath, ',')[0], '*.vim'), '\n')
     if (f =~ '\v0[0-9].+\.vim')
