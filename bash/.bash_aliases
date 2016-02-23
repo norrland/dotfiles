@@ -6,6 +6,7 @@ alias la='ls -Al'
 alias ga="git add"
 alias gc="git commit"
 alias gdiff="git diff"
+alias gwdiff="git diff --word-diff"
 alias glg="git lg"
 alias gst="git status"
 # }}}
