@@ -1,3 +1,9 @@
+for f in split(globpath(split(&runtimepath, ',')[0], '*.vim'), '\n')
+    if (f =~ '\v0[0-9].+\.vim')
+        exe 'source'.f
+    endif
+endfor
+
 " Plug
 " Required:
 call plug#begin(expand('~/.vim/plug/'))
@@ -12,7 +18,7 @@ Plug 'airblade/vim-gitgutter'
 " Go
 Plug 'fatih/vim-go'
 " Autocomplete
-Plug 'Shugo/deoplete'
+Plug 'Shougo/deoplete.nvim'
 Plug 'elzr/vim-json'
 " Colors
 Plug 'morhetz/gruvbox'
@@ -20,17 +26,13 @@ Plug 'geetarista/ego.vim'
 Plug 'wellsjo/wellsokai.vim'
 " Ranger
 Plug 'airodactyl/neovim-ranger'
+" Neomake
+Plug 'benekastah/neomake'
 
 call plug#end()
 
 " Required:
 filetype plugin indent on
-
-for f in split(globpath(split(&runtimepath, ',')[0], '*.vim'), '\n')
-    if (f =~ '\v0[0-9].+\.vim')
-        exe 'source'.f
-    endif
-endfor
 
 
 autocmd BufRead *.py set smartindent expandtab cinwords=if,elif,else,for,while,try,except,finally,def,class
@@ -38,7 +40,7 @@ autocmd BufRead *.py set smartindent expandtab cinwords=if,elif,else,for,while,t
 " Neocomplete
 
 " Disable AutoComplPop.
-"let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup = 0
 " Use neocomplete.
 "let g:neocomplete#enable_at_startup = 1
 " Use deoplete.
