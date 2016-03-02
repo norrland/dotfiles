@@ -13,11 +13,16 @@ alias gst="git status"
 # vagrant {{{
 alias vst="vagrant status"
 alias vup="vagrant up"
-alias vssh="vagrant ssh"
+alias vssh="TERM=screen vagrant ssh"
 # }}}
 # console/editor {{{
+alias diff="diff -u"
 alias tmux="tmux -2" # Set tmux to use 256 colour
 alias vin="nvim"
+# }}}
+# SSH {{{
+# Set TERM for remote connections
+alias ssh="TERM=screen ssh"
 # }}}
 
 # vim:foldmethod=marker:ft=sh

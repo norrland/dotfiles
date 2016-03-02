@@ -133,6 +133,6 @@ if [ -d "$HOME/go" ] ; then
 fi
 
 # Set term
-TERM="screen-256color"
+TERM="tmux-256color"
 source ~/.bash_functions
 source ~/.bash_aliases
